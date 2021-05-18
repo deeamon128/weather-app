@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto';
+  overflow: hidden;
+}
+
+.background {
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+.blur {
+  height: 100vh;
+  width: 100%;
+}
+
+.container {
+  width: 400px;
+  height: 600px;
+  position: absolute;
+  top: 15%;
+  left: 25%;
+  text-align: center;
+}
+
+.location {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.location-timezone {
+  font-size: 35px;
+  font-weight: 100;
+  margin-top: 15px;
+}
+
+.toggle-menu {
+  margin-left: 20px;
+  margin-top: 10px;
+  width: 50px;
+}
+
+.toggle-menu div {
+  width: 26px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  cursor: pointer;
+}
+
+.plus {
+  display: block;
+  color: white;
+  font-size: 35px;
+  font-weight: 100;
+  line-height: 24px;
+  margin-right: 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.date-time {
+  font-size: 25px;
+  margin-top: 2x;
+  font-weight: 100;
+}
+
+.description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.icon {
+  width: 100px;
+}
+
+.temperature-description {
+  font-size: 30px;
+  font-weight: 300;
+  margin-left: 10px;
+}
+
+.temperature-degree {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.degree {
+  font-size: 100px;
+  font-weight: 100;
+}
+
+.temperature-span {
+  font-size: 40px;
+  margin-bottom: 70px;
+  font-weight: 100;
+}
+
+/* Rain, Partially Cloudy */
+[conditions="Rain, Partially cloudy"]{
+  background-image: url(/assets/rain.jpg);
+}
+.container[conditions="Rain, Partially cloudy"]{
+  background:linear-gradient(rgb(2,13,15), rgb(37,65,76));
+  color: white;
+  opacity: 0.8;
+}
+
+/* Rain */
+[conditions="Rain"]{
+  background-image: url(/assets/rain.jpg);
+}
+.container[conditions="Rain"]{
+  background:linear-gradient(rgb(2,13,15), rgb(37,65,76));
+  color: white;
+  opacity: 0.8;
+}
+
+/* Partially cloudy */
+[conditions="Partially cloudy"]{
+  background-image: url(/assets/partially-cloudy.jpg);
+}
+.blur[conditions="Partially cloudy"]{
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px); 
+}
+.container[conditions="Partially cloudy"]{
+  background: linear-gradient(rgb(136,147,173), rgb(249,221,201));
+  color: white;
+  opacity: 0.7;
+}
+
+/* Overcast */
+[conditions="Overcast"]{
+  background-image: url(/assets/overcast.jpg);
+}
+.blur[conditions="Overcast"]{
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px); 
+}
+.container[conditions="Overcast"]{
+  background: linear-gradient(rgb(130,137,146), rgb(89,102,118));
+  color: white;
+  opacity: 0.7;
+}
+
+/* Sunny, Clear */
+[conditions="Clear"]{
+  background-image: url(/assets/clear.jpg);
+}
+.blur[conditions="Clear"]{
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px); 
+}
+.container[conditions="Clear"]{
+  background: linear-gradient(rgb(155,73,70), rgb(254,179,171));
+  color: white;
+  opacity: 0.9;
+}
